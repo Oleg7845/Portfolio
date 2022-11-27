@@ -15,6 +15,48 @@
 
     .App
         @include flex-column()
+        height: 100Vh
+        font-family: 'Open Sans', sans-serif
+        font-size: 14px
+        background: #E1E1E1
+        color: #E1E1E1
 
         .header
             @include flex-column()
+
+            .top-banner
+                position: relative
+                display: flex
+                align-items: center
+                justify-content: center
+                height: 30px
+                background: #8f9394
+
+                .top-banner__text
+                    font-size: 20px
+                    font-weight: 600
+                
+                .top-banner__close
+                    position: absolute
+                    right: 0
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    height: 30px
+                    width: 30px
+                    cursor: pointer
+                
+                    span
+                        display: block
+                        height: 2px
+                        width: 16px
+                        background: #E1E1E1
+                        transform: rotateZ(45deg)
+                
+                    span:after
+                        content: ""
+                        display: block
+                        height: 2px
+                        width: 16px
+                        background: #E1E1E1
+                        transform: rotateZ(-90deg)
