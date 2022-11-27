@@ -4,11 +4,50 @@
 @mixin flex-column()
     display: flex
     flex-direction: column
+
+@mixin input-element__start-styles()
+    outline: none
+    border: none
+    font-family: inherit
+
+$color__main-red: #ff2929
+$color__main-white: #E1E1E1
+$color__input-placeholder: #C0C0C0
     
 *
     margin: 0
     padding: 0
     box-sizing: border-box
+
+    &:after, &:before
+        box-sizing: inherit
+
+input
+    @include input-element__start-styles()
+    &::placeholder
+        color: $color__input-placeholder
+        opacity: 1
+    &:-ms-input-placeholder
+        color: $color__input-placeholder
+    &::-ms-input-placeholder
+        color: $color__input-placeholder
+
+textarea
+    @include input-element__start-styles()
+    resize: none
+
+li
+    list-style-type: none
+
+a
+    text-decoration: none
+
+
+/*::-webkit-scrollbar
+    width: 10px;  ширина для вертикального скролла 
+
+/*ползунок скроллбара 
+    ::-webkit-scrollbar-thumb
 
 #root
     @include flex-column()
@@ -18,8 +57,8 @@
         height: 100Vh
         font-family: 'Open Sans', sans-serif
         font-size: 14px
-        background: #E1E1E1
-        color: #E1E1E1
+        background: $color__main-white
+        color: $color__main-white
 
         .header
             @include flex-column()
@@ -50,7 +89,7 @@
                         display: block
                         height: 2px
                         width: 16px
-                        background: #E1E1E1
+                        background: $color__main-white
                         transform: rotateZ(45deg)
                 
                     span:after
@@ -58,5 +97,18 @@
                         display: block
                         height: 2px
                         width: 16px
-                        background: #E1E1E1
+                        background: $color__main-white
                         transform: rotateZ(-90deg)
+
+        .menu
+            display: flex
+            align-items: center
+            height: 60px
+            padding: 0 30px
+            background: $color__main-red
+
+            .menu-logo
+                font-size: 24px
+                font-weight: 600
+                color: $color__main-white
+                margin-right: 30px

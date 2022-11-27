@@ -1,9 +1,56 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+*:after, *:before {
+  box-sizing: inherit;
+}
 
+input {
+  outline: none;
+  border: none;
+  font-family: inherit;
+}
+input::-moz-placeholder {
+  color: #C0C0C0;
+  opacity: 1;
+}
+input:-ms-input-placeholder {
+  color: #C0C0C0;
+  opacity: 1;
+}
+input::placeholder {
+  color: #C0C0C0;
+  opacity: 1;
+}
+input:-ms-input-placeholder {
+  color: #C0C0C0;
+}
+input::-ms-input-placeholder {
+  color: #C0C0C0;
+}
+
+textarea {
+  outline: none;
+  border: none;
+  font-family: inherit;
+  resize: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*::-webkit-scrollbar
+ *  width: 10px;  ширина для вертикального скролла  */
+/*ползунок скроллбара 
+ *  ::-webkit-scrollbar-thumb */
 #root {
   display: flex;
   flex-direction: column;
@@ -57,4 +104,17 @@
   width: 16px;
   background: #E1E1E1;
   transform: rotateZ(-90deg);
+}
+#root .App .menu {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 30px;
+  background: #ff2929;
+}
+#root .App .menu .menu-logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #E1E1E1;
+  margin-right: 30px;
 }/*# sourceMappingURL=App.css.map */
