@@ -24,29 +24,29 @@ function App() {
 
                 </nav>
                 
-                <div class="menu-search">
-                    <form class="menu-search__form">
-                        <input class="menu-search__input" type="text" placeholder="Search"/>
-                        <button class="menu-search__btn">
-                            <i class="fa fa-search" aria-hidden="true"></i>
+                <div className="menu-search">
+                    <form className="menu-search__form">
+                        <input className="menu-search__input" type="text" placeholder="Search"/>
+                        <button className="menu-search__btn">
+                            <i className="fa fa-search" aria-hidden="true"></i>
                         </button>
                     </form>
                 </div>
 
-                <div class="menu-buttons">
-                    <div class="menu-buttons__btn">
-                        <i class="fa fa-user" aria-hidden="true"></i>
+                <div className="menu-buttons">
+                    <div className="menu-buttons__btn">
+                        <i className="fa fa-user" aria-hidden="true"></i>
                     </div>
-                    <div class="menu-buttons__btn">
-                        <i class="fa fa-balance-scale" aria-hidden="true"></i>
+                    <div className="menu-buttons__btn">
+                        <i className="fa fa-balance-scale" aria-hidden="true"></i>
                     </div>
-                    <div class="menu-buttons__btn">
-                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    <div className="menu-buttons__btn">
+                        <i className="fa fa-heart" aria-hidden="true"></i>
                     </div>
-                    <div class="menu-buttons__btn menu-buttons__basket">
-                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                    <div className="menu-buttons__btn menu-buttons__basket">
+                        <i className="fa fa-shopping-basket" aria-hidden="true"></i>
 
-                        <span class="menu-buttons__shopping-count">5</span>
+                        <span className="menu-buttons__shopping-count">5</span>
                     </div>
                 </div>
             </div>
