@@ -1,235 +1,24 @@
-@mixin display__flex-row()
-    display: flex
+@use './modules/_colors' as colors
+@use './modules/_mixins' as mixins
 
-@mixin display__flex-column()
-    display: flex
-    flex-direction: column
+/* Import Blocks */
+@use './blocks/header' as *
 
-@mixin input-element__start-styles()
-    outline: none
-    border: none
-    font-family: inherit
-
-$color__main-red: #ff2929
-$color__main-white: #E1E1E1
-$color__input-placeholder: #C0C0C0
-    
-*
-    margin: 0
-    padding: 0
-    box-sizing: border-box
-
-    &:after, &:before
-        box-sizing: inherit
-
-input
-    @include input-element__start-styles()
-    &::placeholder
-        color: $color__input-placeholder
-        opacity: 1
-    &:-ms-input-placeholder
-        color: $color__input-placeholder
-    &::-ms-input-placeholder
-        color: $color__input-placeholder
-
-textarea
-    @include input-element__start-styles()
-    resize: none
-
-li
-    list-style-type: none
-
-a
-    text-decoration: none
+/* Import Default styles */
+@import './modules/_default-styles'
 
 
-/*::-webkit-scrollbar
-    width: 10px;  ширина для вертикального скролла 
-
-/*ползунок скроллбара 
-    ::-webkit-scrollbar-thumb
 
 #root
-    @include display__flex-column()
+    @include mixins.display__flex-column()
 
     .App
-        @include display__flex-column()
+        @include mixins.display__flex-column()
         height: 100Vh
         font-family: 'Open Sans', sans-serif
         font-size: 14px
-        background: $color__main-white
-        color: $color__main-white
+        background: colors.$color__main-white
+        color: colors.$color__main-white
 
-        .header
-            @include display__flex-column()
-
-            /* top-banner */
-            .top-banner
-                position: relative
-                display: flex
-                align-items: center
-                justify-content: center
-                height: 30px
-                background: #8f9394
-
-                .top-banner__text
-                    font-size: 20px
-                    font-weight: 600
-                
-                .top-banner__close
-                    @include display__flex-row()
-                    position: absolute
-                    right: 0
-                    justify-content: center
-                    align-items: center
-                    height: 30px
-                    width: 30px
-                    cursor: pointer
-                
-                    span
-                        display: block
-                        height: 2px
-                        width: 16px
-                        background: $color__main-white
-                        transform: rotateZ(45deg)
-
-                        &:after
-                            content: ""
-                            display: block
-                            height: 2px
-                            width: 16px
-                            background: $color__main-white
-                            transform: rotateZ(-90deg)
-
-            /* menu */
-            .menu
-                @include display__flex-row()
-                align-items: center
-                height: 60px
-                padding: 0 30px
-                background: $color__main-red
-
-                /* menu-logo */
-                .menu-logo
-                    font-size: 24px
-                    font-weight: 600
-                    color: $color__main-white
-                    margin-right: 30px
-
-                /* menu-nav */
-                .menu-nav
-                    @include display__flex-column()
-                    position: relative
-                    justify-content: center
-                    width: 150px
-                    height: 60px
-                    margin-right: 30px
-
-                    .menu-nav__catalog-btn
-                        @include display__flex-row()
-                        align-items: center
-                        height: 40px
-                        padding: 0 20px
-                        border-radius: 8px
-                        cursor: pointer
-                        transition: 0.35s
-
-                        & i
-                            margin-right: 20px
-                            font-size: 24px
-                            transition: 0.35s
-                        
-                        & h3
-                            transition: 0.35s
-                    
-                    &:hover .menu-nav__catalog-btn
-                        background: #F7F7F7
-                        color: #ff2929
-
-                /* menu-search */
-                .menu-search
-                    @include display__flex-row()
-                    align-items: center
-                    flex-grow: 2
-                    margin-right: 30px
-
-                    .menu-search__form
-                        @include display__flex-row()
-                        flex-grow: inherit
-                
-                        .menu-search__input
-                            @include display__flex-row()
-                            flex-grow: inherit
-                            height: 40px
-                            padding: 0 20px
-                            border-radius: 8px 0 0 8px
-                            background: #bf6f6f
-                            font-size: 16px
-                            color: #E1E1E1
-                            transition: 0.35s
-
-                            &:focus
-                                background: #ee8787
-                                color: #F7F7F7
-                
-                        .menu-search__btn
-                            height: 40px
-                            padding: 0 15px
-                            border: none
-                            border-radius: 0 8px 8px 0
-                            background: #E1E1E1
-                            color: #ff2929
-                            font-size: 18px
-                            font-weight: 600
-                            cursor: pointer
-                            transition: 0.35s
-                
-                            &:hover
-                                background: #FFFFFF
-                
-                /* menu-buttons */
-                .menu-buttons
-                    @include display__flex-row()
-                
-                    .menu-buttons__btn
-                        @include display__flex-row()
-                        align-items: center
-                        justify-content: center
-                        height: 40px
-                        margin-right: 15px
-                        padding: 0 10px
-                        border-radius: 8px
-                        font-size: 24px
-                        font-weight: 600
-                        cursor: pointer
-                        transition: 0.35s
-
-                        &:last-child
-                            margin-right: 0
-                        
-                        &:hover
-                            background: #E1E1E1
-                            color: #ff2929
-
-                    .menu-buttons__basket
-                        position: relative
-                        
-                        .menu-buttons__shopping-count
-                            @include display__flex-row()
-                            position: absolute
-                            top: 0
-                            right: 0
-                            align-items: center
-                            justify-content: center
-                            height: 16px
-                            padding: 0 5px
-                            border-radius: 8px
-                            background: #f29d00
-                            color: #FFFFFF
-                            font-size: 12px
-                            font-weight: 400
-                            transition: 0.35s
-
-                        &:hover .menu-buttons__shopping-count
-                            /* background: #E1E1E1; */
-                            color: #ff2929
+        @include Header()
+        
