@@ -67,6 +67,8 @@ a {
 #root .App .header {
   display: flex;
   flex-direction: column;
+  /* top-banner */
+  /* menu */
 }
 #root .App .header .top-banner {
   position: relative;
@@ -81,9 +83,9 @@ a {
   font-weight: 600;
 }
 #root .App .header .top-banner .top-banner__close {
+  display: flex;
   position: absolute;
   right: 0;
-  display: flex;
   justify-content: center;
   align-items: center;
   height: 30px;
@@ -105,16 +107,136 @@ a {
   background: #E1E1E1;
   transform: rotateZ(-90deg);
 }
-#root .App .menu {
+#root .App .header .menu {
   display: flex;
   align-items: center;
   height: 60px;
   padding: 0 30px;
   background: #ff2929;
+  /* menu-logo */
+  /* menu-nav */
+  /* menu-search */
+  /* menu-buttons */
 }
-#root .App .menu .menu-logo {
+#root .App .header .menu .menu-logo {
   font-size: 24px;
   font-weight: 600;
   color: #E1E1E1;
   margin-right: 30px;
+}
+#root .App .header .menu .menu-nav {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  width: 150px;
+  height: 60px;
+  margin-right: 30px;
+}
+#root .App .header .menu .menu-nav .menu-nav__catalog-btn {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.35s;
+}
+#root .App .header .menu .menu-nav .menu-nav__catalog-btn i {
+  margin-right: 20px;
+  font-size: 24px;
+  transition: 0.35s;
+}
+#root .App .header .menu .menu-nav .menu-nav__catalog-btn h3 {
+  transition: 0.35s;
+}
+#root .App .header .menu .menu-nav:hover .menu-nav__catalog-btn {
+  background: #F7F7F7;
+  color: #ff2929;
+}
+#root .App .header .menu .menu-search {
+  display: flex;
+  align-items: center;
+  flex-grow: 2;
+  margin-right: 30px;
+}
+#root .App .header .menu .menu-search .menu-search__form {
+  display: flex;
+  flex-grow: inherit;
+}
+#root .App .header .menu .menu-search .menu-search__form .menu-search__input {
+  display: flex;
+  flex-grow: inherit;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 8px 0 0 8px;
+  background: #bf6f6f;
+  font-size: 16px;
+  color: #E1E1E1;
+  transition: 0.35s;
+}
+#root .App .header .menu .menu-search .menu-search__form .menu-search__input:focus {
+  background: #ee8787;
+  color: #F7F7F7;
+}
+#root .App .header .menu .menu-search .menu-search__form .menu-search__btn {
+  height: 40px;
+  padding: 0 15px;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  background: #E1E1E1;
+  color: #ff2929;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.35s;
+}
+#root .App .header .menu .menu-search .menu-search__form .menu-search__btn:hover {
+  background: #FFFFFF;
+}
+#root .App .header .menu .menu-buttons {
+  display: flex;
+}
+#root .App .header .menu .menu-buttons .menu-buttons__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  margin-right: 15px;
+  padding: 0 10px;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.35s;
+}
+#root .App .header .menu .menu-buttons .menu-buttons__btn:last-child {
+  margin-right: 0;
+}
+#root .App .header .menu .menu-buttons .menu-buttons__btn:hover {
+  background: #E1E1E1;
+  color: #ff2929;
+}
+#root .App .header .menu .menu-buttons .menu-buttons__basket {
+  position: relative;
+}
+#root .App .header .menu .menu-buttons .menu-buttons__basket .menu-buttons__shopping-count {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  padding: 0 5px;
+  border-radius: 8px;
+  background: #f29d00;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 400;
+  transition: 0.35s;
+}
+#root .App .header .menu .menu-buttons .menu-buttons__basket:hover .menu-buttons__shopping-count {
+  /* background: #E1E1E1; */
+  color: #ff2929;
 }/*# sourceMappingURL=App.css.map */
