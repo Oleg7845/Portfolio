@@ -1,7 +1,7 @@
-@use '../../modules/_colors' as colors
-@use '../.././modules/_mixins' as mixins
+@use '../modules/_colors' as colors
+@use '../modules/_mixins' as mixins
 
-@mixin Header()
+@mixin header()
     .header
         @include mixins.display__flex-column()
 
@@ -42,7 +42,7 @@
                         width: 16px
                         background: colors.$color__main-white
                         transform: rotateZ(-90deg)
-
+        
         /* menu */
         .menu
             display: flex
@@ -51,14 +51,13 @@
             padding: 0 30px
             background: colors.$color__main-red
 
-            /* menu-logo */
+            /* menu_logo */
             .menu-logo
                 font-size: 24px
                 font-weight: 600
                 color: colors.$color__main-white
                 margin-right: 30px
 
-            /* menu-nav */
             .menu-nav
                 @include mixins.display__flex-column()
                 position: relative
@@ -128,7 +127,7 @@
             
                         &:hover
                             background: colors.$color__nature-white
-            
+
             /* menu-buttons */
             .menu-buttons
                 display: flex
