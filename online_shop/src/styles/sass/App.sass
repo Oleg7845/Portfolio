@@ -2,12 +2,10 @@
 @use './modules/_mixins' as mixins
 
 /* Import Blocks */
-@use './blocks/header' as *
+@use './blocks/_header' as *
 
 /* Import Default styles */
 @import './modules/_default-styles'
-
-
 
 #root
     @include mixins.display__flex-column()
