@@ -1,9 +1,8 @@
-@use '../modules/_colors' as colors
-@use '../modules/_mixins' as mixins
+@use '../modules/Modules'
 
 @mixin header()
     .header
-        @include mixins.display__flex-column()
+        @include Modules.mixins-display__flex-column()
 
         /* top-banner */
         .top-banner
@@ -12,7 +11,7 @@
             align-items: center
             justify-content: center
             height: 30px
-            background: colors.$color__top-banner
+            background: Modules.$colors-color__top-banner
 
             .top-banner__text
                 font-size: 20px
@@ -32,7 +31,7 @@
                     display: block
                     height: 2px
                     width: 16px
-                    background: colors.$color__main-white
+                    background: Modules.$colors-color__main-white
                     transform: rotateZ(45deg)
 
                     &:after
@@ -40,7 +39,7 @@
                         display: block
                         height: 2px
                         width: 16px
-                        background: colors.$color__main-white
+                        background: Modules.$colors-color__main-white
                         transform: rotateZ(-90deg)
         
         /* menu */
@@ -49,17 +48,17 @@
             align-items: center
             height: 60px
             padding: 0 30px
-            background: colors.$color__main-red
+            background: Modules.$colors-color__main-red
 
             /* menu_logo */
             .menu-logo
                 font-size: 24px
                 font-weight: 600
-                color: colors.$color__main-white
+                color: Modules.$colors-color__main-white
                 margin-right: 30px
 
             .menu-nav
-                @include mixins.display__flex-column()
+                @include Modules.mixins-display__flex-column()
                 position: relative
                 justify-content: center
                 width: 150px
@@ -84,8 +83,8 @@
                         transition: 0.35s
                 
                 &:hover .menu-nav__catalog-btn
-                    background: colors.$color__light-smoke-white
-                    color: colors.$color__main-red
+                    background: Modules.$colors-color__light-smoke-white
+                    color: Modules.$colors-color__main-red
 
             /* menu-search */
             .menu-search
@@ -104,29 +103,29 @@
                         height: 40px
                         padding: 0 20px
                         border-radius: 8px 0 0 8px
-                        background: colors.$color__search-input-background
+                        background: Modules.$colors-color__search-input-background
                         font-size: 16px
-                        color: colors.$color__main-white
+                        color: Modules.$colors-color__main-white
                         transition: 0.35s
 
                         &:focus
-                            background: colors.$color__search-input-hover
-                            color: colors.$color__light-smoke-white
+                            background: Modules.$colors-color__search-input-hover
+                            color: Modules.$colors-color__light-smoke-white
             
                     .menu-search__btn
                         height: 40px
                         padding: 0 15px
                         border: none
                         border-radius: 0 8px 8px 0
-                        background: colors.$color__main-white
-                        color: colors.$color__main-red
+                        background: Modules.$colors-color__main-white
+                        color: Modules.$colors-color__main-red
                         font-size: 18px
                         font-weight: 600
                         cursor: pointer
                         transition: 0.35s
             
                         &:hover
-                            background: colors.$color__nature-white
+                            background: Modules.$colors-color__nature-white
 
             /* menu-buttons */
             .menu-buttons
@@ -149,8 +148,8 @@
                         margin-right: 0
                     
                     &:hover
-                        background: colors.$color__main-white
-                        color: colors.$color__main-red
+                        background: Modules.$colors-color__main-white
+                        color: Modules.$colors-color__main-red
 
                 .menu-buttons__basket
                     position: relative
@@ -165,12 +164,12 @@
                         height: 16px
                         padding: 0 5px
                         border-radius: 8px
-                        background: colors.$color__shopping-count
-                        color: colors.$color__nature-white
+                        background: Modules.$colors-color__shopping-count
+                        color: Modules.$colors-color__nature-white
                         font-size: 12px
                         font-weight: 400
                         transition: 0.35s
 
                     &:hover .menu-buttons__shopping-count
                         /* background: #E1E1E1; */
-                        color: colors.$color__main-red
+                        color: Modules.$colors-color__main-red
