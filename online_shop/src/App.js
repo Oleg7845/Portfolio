@@ -67,13 +67,11 @@ function App() {
             'product_3': 'Product 3',
             'product_4': 'Product 4',
             'product_5': 'Product 5',
-            'product_6': 'Product 6',
-            'product_7': 'Product 7',
         }
     })
 
     useEffect(() => {
-        console.log('useEffect')
+        
     });
     
     const closeTopBanner = ()=> {
