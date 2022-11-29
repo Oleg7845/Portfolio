@@ -50,6 +50,31 @@ function App() {
         id: '',
         open: false
     })
+
+    const [Compare, setCompare] = useState({
+        open: false
+    })
+
+    const [Favorites, setFavorites] = useState({
+        open: false
+    })
+
+    const [Basket, setBasket] = useState({
+        open: false,
+        products: {
+            'product_1': 'Product 1',
+            'product_2': 'Product 2',
+            'product_3': 'Product 3',
+            'product_4': 'Product 4',
+            'product_5': 'Product 5',
+            'product_6': 'Product 6',
+            'product_7': 'Product 7',
+        }
+    })
+
+    useEffect(() => {
+        console.log('useEffect')
+    });
     
     const closeTopBanner = ()=> {
         setTopBanner({text: TopBanner.text, open: false})
@@ -59,20 +84,20 @@ function App() {
         setSublist({id: id, open: open})
     }
 
+
+
     return (
         <div className='App'>
             <header className='header'>
-                {
-                    TopBanner.open && (
-                        <div className='top-banner'>
-                            <h3 className='top-banner__text'>{TopBanner.text}</h3>
-                            
-                            <div className='top-banner__close' onClick={closeTopBanner}>
-                                <span></span>
-                            </div>
+                {TopBanner.open && (
+                    <div className='top-banner'>
+                        <h3 className='top-banner__text'>{TopBanner.text}</h3>
+                        
+                        <div className='top-banner__close' onClick={closeTopBanner}>
+                            <span></span>
                         </div>
-                    )
-                }
+                    </div>
+                )}
                 
                 <div className='menu'>
                     <a className='menu-logo' href='#'>OnlineShop</a>
@@ -182,8 +207,26 @@ function App() {
                         <div className='menu-buttons__btn menu-buttons__basket'>
                             <i className='fa fa-shopping-basket' aria-hidden='true'></i>
 
-                            <span className='menu-buttons__shopping-count'>5</span>
+                            <span className='menu-buttons__shopping-count'>{Object.keys(Basket.products).length}</span>
                         </div>
+
+                        {Compare.open && (
+                            <div className='compare'>
+                            
+                            </div>
+                        )}
+
+                        {Favorites.open && (
+                            <div className='favorites'>
+                            
+                            </div>
+                        )}
+
+                        {Basket.open && (
+                            <div className='basket'>
+                            
+                            </div>
+                        )}
                     </div>
                 </div>
             </header>
