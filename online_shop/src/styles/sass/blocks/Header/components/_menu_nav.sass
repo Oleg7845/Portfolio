@@ -1,5 +1,7 @@
 @use '../../../modules/Modules'
 
+@use '_menu_catalog' as *
+
 @mixin Menu_nav()
     .menu-nav
         @include Modules.mixins-display__flex-column()
@@ -29,3 +31,5 @@
         &:hover .menu-nav__catalog-btn
             background: Modules.$colors-color__light-smoke-white
             color: Modules.$colors-color__main-red
+
+    @include Menu_catalog()

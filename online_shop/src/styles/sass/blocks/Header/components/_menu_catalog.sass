@@ -1,0 +1,23 @@
+@use '../../../modules/Modules'
+
+@use '_menu_list' as *
+
+@mixin Menu_catalog()
+    .menu-nav__catalog
+        position: absolute
+        top: 60px
+        visibility: hidden
+        display: flex
+        border-radius: 0 0 8px 8px
+        background: Modules.$colors-color__nature-white
+        overflow: hidden
+        -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5)
+        box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5)
+
+    a
+        color: Modules.$colors-color__grey-text
+
+    @include Menu_list()
+
+    .menu-nav:hover .menu-nav__catalog
+        visibility: visible

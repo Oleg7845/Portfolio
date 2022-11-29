@@ -23,3 +23,18 @@
             height: 30px
             width: 30px
             cursor: pointer
+
+            & span
+                display: block
+                height: 2px
+                width: 16px
+                background: #E1E1E1
+                transform: rotateZ(45deg)
+
+            & span::after
+                content: ""
+                display: block
+                height: 2px
+                width: 16px
+                background: #E1E1E1
+                transform: rotateZ(-90deg)
