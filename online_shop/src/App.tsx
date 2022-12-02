@@ -41,33 +41,52 @@ function App() {
         }
     })
 
-    const [TopBanner, setTopBanner] = useState({
-        text: '-70% Disconts in our OnlineShop!',
-        open: true
+    interface ITopBanner {
+        open: boolean,
+        text: string
+    }
+    interface ISublist {
+        open: boolean,
+        id: number | null
+    }
+    interface ICompare {
+        open: boolean
+    }
+    interface IFavorites {
+        open: boolean
+    }
+    interface IBasket {
+        open: boolean,
+        products: any[]
+    }
+
+    const [TopBanner, setTopBanner] = useState<ITopBanner>({
+        open: true,
+        text: '-70% Disconts in our OnlineShop!'
     })
 
-    const [Sublist, setSublist] = useState({
-        id: '',
-        open: false
-    })
-
-    const [Compare, setCompare] = useState({
-        open: false
-    })
-
-    const [Favorites, setFavorites] = useState({
-        open: false
-    })
-
-    const [Basket, setBasket] = useState({
+    const [Sublist, setSublist] = useState<ISublist>({
         open: false,
-        products: {
-            'product_1': 'Product 1',
-            'product_2': 'Product 2',
-            'product_3': 'Product 3',
-            'product_4': 'Product 4',
-            'product_5': 'Product 5',
-        }
+        id: null
+    })
+
+    const [Compare, setCompare] = useState<ICompare>({
+        open: false
+    })
+
+    const [Favorites, setFavorites] = useState<IFavorites>({
+        open: false
+    })
+
+    const [Basket, setBasket] = useState<IBasket>({
+        open: false,
+        products: [
+            'Product 1',
+            'Product 2',
+            'Product 3',
+            'Product 4',
+            'Product 5',
+        ]
     })
 
     useEffect(() => {
@@ -75,10 +94,10 @@ function App() {
     });
     
     const closeTopBanner = ()=> {
-        setTopBanner({text: TopBanner.text, open: false})
+        setTopBanner({open: false, text: TopBanner.text})
     }
 
-    const toggleSublist = (id, open)=> {
+    const toggleSublist = (open: boolean, id: number | null)=> {
         setSublist({id: id, open: open})
     }
 
@@ -111,8 +130,8 @@ function App() {
                                 <li className='menu-nav__item'>
                                     <a className='menu-nav__link' href='#'
                                     data-sublist-id='9'
-                                    onMouseEnter={() => toggleSublist(9, true)}
-                                    onMouseLeave={() => toggleSublist('', false)}
+                                    onMouseEnter={() => toggleSublist(true, 9)}
+                                    onMouseLeave={() => toggleSublist(false, null)}
                                     >Product 1</a>
                                 </li>
                                 <li className='menu-nav__item'>
@@ -124,8 +143,8 @@ function App() {
                                 <li className='menu-nav__item'>
                                     <a className='menu-nav__link' href='#'
                                         data-sublist-id='12'
-                                        onMouseEnter={() => toggleSublist('12', true)}
-                                        onMouseLeave={() => toggleSublist('', false)}
+                                        onMouseEnter={() => toggleSublist(true, 12)}
+                                        onMouseLeave={() => toggleSublist(false, null)}
                                     >Product 4</a>
                                 </li>
                                 <li className='menu-nav__item'>
@@ -134,10 +153,10 @@ function App() {
                             </ul>
 
 
-                        {Sublist.id == 9 && Sublist.open
+                        {Sublist.id === 9 && Sublist.open
                             ? <ul className='menu-nav__sublist'
-                                    onMouseEnter={() => toggleSublist(9, true)}
-                                    onMouseLeave={() => toggleSublist(9, false)}>
+                                    onMouseEnter={() => toggleSublist(true, 9)}
+                                    onMouseLeave={() => toggleSublist(false, null)}>
                                 <li className='menu-nav__item'>
                                     <a className='menu-nav__link' href='#'>SubProduct 1</a>
                                 </li>
@@ -165,10 +184,10 @@ function App() {
                             </ul>
                             : ''}
                             
-                        {Sublist.id == 12 && Sublist.open
+                        {Sublist.id === 12 && Sublist.open
                             ? <ul className='menu-nav__sublist'
-                                    onMouseEnter={() => toggleSublist(12, true)}
-                                    onMouseLeave={() => toggleSublist(12, false)}>
+                                    onMouseEnter={() => toggleSublist(true, 12)}
+                                    onMouseLeave={() => toggleSublist(false, null)}>
                                 <li className='menu-nav__item'>
                                     <a className='menu-nav__link' href='#'>SubProduct 1</a>
                                 </li>
