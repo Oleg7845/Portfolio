@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import './styles/css/App.min.css';
+import './App.min.css';
 
-function App() {
+function App(){
     const [Products, setProducts] = useState({
         id: new Date(),
         artikel: '82NX00F6GE',

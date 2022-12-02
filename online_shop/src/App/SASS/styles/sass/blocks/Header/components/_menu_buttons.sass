@@ -1,0 +1,48 @@
+@use '../../../modules/Modules'
+
+@mixin Menu_buttons()
+    .menu-buttons
+        display: flex
+
+        .menu-buttons__btn
+            display: flex
+            align-items: center
+            justify-content: center
+            height: 40px
+            margin-right: 15px
+            padding: 0 10px
+            border-radius: 8px
+            font-size: 24px
+            font-weight: 600
+            cursor: pointer
+            transition: 0.35s
+
+            &:last-child
+                margin-right: 0
+            
+            &:hover
+                background: Modules.$colors-color__main-white
+                color: Modules.$colors-color__main-red
+
+        .menu-buttons__basket
+            position: relative
+            
+            .menu-buttons__shopping-count
+                display: flex
+                position: absolute
+                top: 0
+                right: 0
+                align-items: center
+                justify-content: center
+                height: 16px
+                padding: 0 5px
+                border-radius: 8px
+                background: Modules.$colors-color__shopping-count
+                color: Modules.$colors-color__nature-white
+                font-size: 12px
+                font-weight: 400
+                transition: 0.35s
+
+            &:hover .menu-buttons__shopping-count
+                /* background: #E1E1E1; */
+                color: Modules.$colors-color__main-red

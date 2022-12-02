@@ -1,0 +1,12 @@
+@use '../../modules/Modules'
+
+@use './components/_top_banner' as *
+@use './components/_menu' as *
+
+@mixin Header()
+    .header
+        @include Modules.mixins-display__flex-column()
+
+        @include Top_banner()
+
+        @include Menu()

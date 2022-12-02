@@ -1,0 +1,19 @@
+@use '../../../modules/Modules'
+
+@use '_menu_logo' as *
+@use '_menu_nav' as *
+@use '_menu_search' as *
+@use '_menu_buttons' as *
+
+@mixin Menu()
+    .menu
+        display: flex
+        align-items: center
+        height: 60px
+        padding: 0 30px
+        background: Modules.$colors-color__main-red
+
+        @include Menu_logo()
+        @include Menu_nav()
+        @include Menu_search()
+        @include Menu_buttons()

@@ -1,0 +1,22 @@
+@use './modules/Modules'
+
+/* Import Blocks */
+@use './blocks/Header' as *
+@use './blocks/Main' as *
+@use './blocks/Footer' as *
+
+/* Import Default styles */
+@import './modules/_default-styles'
+
+#root
+    @include Modules.mixins-display__flex-column()
+
+    .App
+        @include Modules.mixins-display__flex-column()
+        height: 100Vh
+        font-family: 'Open Sans', sans-serif
+        font-size: 14px
+        background: Modules.$colors-color__main-white
+        color: Modules.$colors-color__main-white
+        
+        @include Header()

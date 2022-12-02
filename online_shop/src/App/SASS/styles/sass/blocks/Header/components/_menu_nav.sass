@@ -1,0 +1,35 @@
+@use '../../../modules/Modules'
+
+@use '_menu_catalog' as *
+
+@mixin Menu_nav()
+    .menu-nav
+        @include Modules.mixins-display__flex-column()
+        position: relative
+        justify-content: center
+        width: 150px
+        height: 60px
+        margin-right: 30px
+
+        .menu-nav__catalog-btn
+            display: flex
+            align-items: center
+            height: 40px
+            padding: 0 20px
+            border-radius: 8px
+            cursor: pointer
+            transition: 0.35s
+
+            & i
+                margin-right: 20px
+                font-size: 24px
+                transition: 0.35s
+            
+            & h3
+                transition: 0.35s
+        
+        &:hover .menu-nav__catalog-btn
+            background: Modules.$colors-color__light-smoke-white
+            color: Modules.$colors-color__main-red
+
+    @include Menu_catalog()
