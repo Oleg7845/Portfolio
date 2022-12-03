@@ -8,7 +8,7 @@ const Nav = () => {
     })
 
     const toggleSublist = (open: boolean, id: number | null)=> {
-        setSublist({id: id, open: open})
+        setSublist({open: open, id: id})
     }
 
     return (
