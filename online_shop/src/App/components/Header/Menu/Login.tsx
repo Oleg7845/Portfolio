@@ -6,7 +6,7 @@ const Login = () => {
         open: false
     })
 
-    const toggleLogin = (open: boolean)=> {
+    const toggleLogin = (open: boolean) => {
         setLogin({open: open})
     }
 

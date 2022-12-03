@@ -7,7 +7,7 @@ const Nav = () => {
         id: null
     })
 
-    const toggleSublist = (open: boolean, id: number | null)=> {
+    const toggleSublist = (open: boolean, id: number | null) => {
         setSublist({open: open, id: id})
     }
 
