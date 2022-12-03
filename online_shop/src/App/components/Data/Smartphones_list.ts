@@ -1,4 +1,4 @@
-import ISmartphone from '../Models/ISmartphone.interface';
+import ISmartphone from '../models/ISmartphone.interface';
 
 let Smartphones_list: ISmartphone[] = [
     {

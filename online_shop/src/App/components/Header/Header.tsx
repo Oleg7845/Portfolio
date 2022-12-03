@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
-import ISmartphone from '../Models/ISmartphone.interface';
-import Smartphones_list from '../Data/Smartphones_list';
+import ISmartphone from '../models/ISmartphone.interface';
+import Smartphones_list from '../data/Smartphones_list';
 import TopBanner from './TopBanner/TopBanner';
 import Nav from './Menu/Nav';
 import Search from './Menu/Search';
