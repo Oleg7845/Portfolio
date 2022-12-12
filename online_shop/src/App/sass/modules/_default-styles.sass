@@ -23,12 +23,16 @@ textarea
     @include mixins.input-element__start-styles()
     resize: none
 
+button
+    @include mixins.input-element__start-styles()
+    cursor: pointer
+    color: colors.$color__grey-text
+
 li
     list-style-type: none
 
 a
     text-decoration: none
-
 
 /*::-webkit-scrollbar
     width: 10px;  ширина для вертикального скролла 

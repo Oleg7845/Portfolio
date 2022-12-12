@@ -24,6 +24,93 @@
                 background: Modules.$colors-color__main-white
                 color: Modules.$colors-color__main-red
 
+        .login-registration
+            position: absolute
+            top: 50%
+            left: 50%
+            margin-right: -50%
+            transform: translate(-50%, -50%)
+            visibility: visible
+            min-height: 200px
+            width: 340px
+            padding: 20px
+            border-radius: 8px
+            background: Modules.$colors-color__nature-white
+            overflow: hidden
+            -webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.5)
+            box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.5)
+
+            .login-registration__title
+                margin-bottom: 20px
+                font-size: 18px
+                color: Modules.$colors-color__dark-grey-text
+                text-align: center
+
+            .login-registration__form
+                @include Modules.mixins-display__flex-column()
+
+                p
+                    color: Modules.$colors-color__grey-text
+                    
+                .login-registration__method-name
+                    @include Modules.mixins-disable-text-selection()
+                    margin-bottom: 20px
+                    font-size: 16px
+
+                .login-registration__input
+                    margin-bottom: 10px
+                    padding: 12px
+                    border-radius: 8px
+                    border: 1px solid Modules.$colors-color__input-placeholder
+                    color: Modules.$colors-color__input-placeholder
+
+                    &:hover
+                        border: 1px solid Modules.$colors-color__grey-text
+                        color: Modules.$colors-color__dark-grey-text
+
+                    &:focus
+                        border: 1px solid Modules.$colors-color__grey-text
+                        color: Modules.$colors-color__dark-grey-text
+                
+                .login-registration__submit-btn
+                    margin: 5px 0 25px 0
+                    padding: 12px
+                    border-radius: 8px
+                    background: Modules.$colors-color__main-red
+                    color: Modules.$colors-color__light-smoke-white
+                    transition: 0.35s
+
+                    &:hover
+                        opacity: 0.8
+                        color: Modules.$colors-color__nature-white
+                        
+
+                .login-registration__method-selector
+                    @include Modules.mixins-disable-text-selection()
+                    margin-bottom: 20px
+                    padding: 10px
+                    border-radius: 8px
+                    border: 1px solid Modules.$colors-color__input-placeholder
+                    text-align: center
+                    cursor: pointer
+                    transition: 0.35s
+
+                    &:hover
+                        border: 1px solid Modules.$colors-color__smoke-white
+                        background: Modules.$colors-color__smoke-white
+
+            .login-registration__type-selector
+                display: flex
+                justify-content: center
+
+                p
+                    cursor: pointer
+                    color: Modules.$colors-color__input-placeholder
+
+                p:hover
+                    color: Modules.$colors-color__main-red
+                        
+
         .menu-buttons__basket
             position: relative
             
