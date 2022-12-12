@@ -1,8 +1,9 @@
 import {useState} from 'react';
-import {ILoginPanel, ILoginMethod, ILoginType} from './Models/ILogin.interface';
+import {IPopupState, ILoginMethod, ILoginType} from './Models/ILogin.interface';
+import Popup from '../../Popup/Popup';
 
-const Login = () => {
-    const [LoginPanel, setLogin] = useState<ILoginPanel>({
+const Profile = () => {
+    const [PopupState, setPopupState] = useState<IPopupState>({
         open: false,
         auth: false
     })
@@ -15,8 +16,14 @@ const Login = () => {
         type: true
     })
 
-    const toggleLogin = (open: boolean) => {
-        setLogin({open: open, auth: LoginPanel.auth})
+    const openPopup = () => {
+        setPopupState({open: true, auth: PopupState.auth})
+    }
+
+    const closePopup = () => {
+        toggleLoginType(true)
+        toggleLoginMethod(true)
+        setPopupState({open: false, auth: PopupState.auth})
     }
 
     const toggleLoginMethod = (method: boolean) => {
@@ -29,19 +36,23 @@ const Login = () => {
 
     return (
         <>
-            <div className='menu-buttons__btn' onClick={() => toggleLogin(!LoginPanel.open)}>
+            <div className='menu-buttons__btn' onClick={() => openPopup()}>
                 <i className='fa fa-user' aria-hidden='true'></i>
             </div>
 
-            {LoginPanel.open && (
-                <div className='login-registration'>
-                    {LoginType.type
-                        ? <h3 className='login-registration__title'>Login</h3>
-                        : <h3 className='login-registration__title'>Registration</h3>
-                    }
+            <Popup open={PopupState.open} closePopup={closePopup}>
+                {LoginType.type
+                    ? <h3 className='login-registration__title'>Login</h3>
+                    : <h3 className='login-registration__title'>Registration</h3>
+                }
                 {LoginType.type
                     ?
-                        <form className='login-registration__form'>
+                        <form className='login-registration__form'
+                            onSubmit={(e) => {
+                                e.preventDefault()
+                                closePopup()
+                            }}
+                        >
                             {LoginMethod.method
                                 ?
                                 <>
@@ -66,25 +77,30 @@ const Login = () => {
                             </span>
                         </form>
                     :
-                        <form className='login-registration__form'>
+                        <form className='login-registration__form'
+                            onSubmit={(e) => {
+                                e.preventDefault()
+                                closePopup()
+                            }}
+                        >
                             <input className='login-registration__input' type="text" placeholder='Name'/>
                             <input className='login-registration__input' type="phone" placeholder='Phone'/>
-                            <input className='login-registration__input' type="password" placeholder='Password'/>
                             <input className='login-registration__input' type="email" placeholder='Email'/>
+                            <input className='login-registration__input' type="password" placeholder='Password'/>
+                            <input className='login-registration__input' type="password" placeholder='Confirm password'/>
                             <button className='login-registration__submit-btn' type='submit'>Registration</button>
                         </form>
                 }
-                
-                    <span className='login-registration__type-selector' onClick={() => toggleLoginType(!LoginType.type)}>
-                        {LoginType.type
-                            ? <p>Registration</p>
-                            : <p>Login</p>
-                        }
-                    </span>
-                </div>
-            )}
+
+                <span className='login-registration__type-selector' onClick={() => toggleLoginType(!LoginType.type)}>
+                    {LoginType.type
+                        ? <p>Registration</p>
+                        : <p>Login</p>
+                    }
+                </span>
+            </Popup>
         </>
     );
 }
 
-export default Login;
+export default Profile;

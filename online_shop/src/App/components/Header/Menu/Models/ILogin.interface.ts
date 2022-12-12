@@ -1,4 +1,4 @@
-export interface ILoginPanel {
+export interface IPopupState {
     open: boolean,
     auth: boolean
 }
