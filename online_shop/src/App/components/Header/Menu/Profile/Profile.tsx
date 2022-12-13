@@ -1,90 +1,60 @@
 import {useState} from 'react';
-import {IPopupState, ILoginMethod, ILoginType} from '../Models/ILogin.interface';
+import {IPopupState} from '../Models/ILogin.interface';
+import ProfileMenu from './ProfileMenu';
 import Popup from '../../../Popup';
-import ProfileForm from './ProfileForm';
+import LoginForm from './LoginForm';
+import RegistrationForm from './RegistrationForm';
 
 const Profile = () => {
     const [PopupState, setPopupState] = useState<IPopupState>({
         open: false,
-        auth: false
+        auth: true
     })
 
-    const [LoginMethod, setLoginMethod] = useState<ILoginMethod>({
-        method: true
-    })
-
-    const [LoginType, setLoginType] = useState<ILoginType>({
-        type: true
-    })
+    const [ProfileForm, setProfileForm] = useState<Boolean>(true)
 
     const openPopup = () => {
         setPopupState({open: true, auth: PopupState.auth})
     }
 
     const closePopup = () => {
-        toggleLoginType(true)
-        toggleLoginMethod(true)
+        toggleProfileForm(true)
         setPopupState({open: false, auth: PopupState.auth})
     }
 
-    const toggleLoginMethod = (method: boolean) => {
-        setLoginMethod({method: method})
-    }
-
-    const toggleLoginType = (type: boolean) => {
-        setLoginType({type: type})
+    const toggleProfileForm = (type: boolean) => {
+        setProfileForm(type)
     }
 
     return (
         <>
-            <div className='menu-buttons__btn' onClick={() => openPopup()}>
-                <i className='fa fa-user' aria-hidden='true'></i>
-            </div>
+            {PopupState.auth
+                ?
+                    <div className='menu-buttons__btn'>
+                        <i className='fa fa-user' aria-hidden='true'></i>
+                    </div>
+                :
+                    <div className='menu-buttons__btn' onClick={() => openPopup()}>
+                        <i className='fa fa-user' aria-hidden='true'></i>
+                    </div>
+            }
+
+            <ProfileMenu/>
 
             <Popup open={PopupState.open} closePopup={closePopup}>
-                {LoginType.type
+                {ProfileForm
                     ? <h3 className='profile__title'>Login</h3>
                     : <h3 className='profile__title'>Registration</h3>
                 }
-                {LoginType.type
+                {ProfileForm
                     ?
-                        <ProfileForm closePopup={closePopup}>
-                            {LoginMethod.method
-                                ?
-                                <>
-                                    <p className='profile__method-name'>To enter, enter your Phonenumber</p>
-                                    <input className='profile__input' type="phone" placeholder='Phone'/>
-                                </>
-                                :
-                                <>
-                                    <p className='profile__method-name'>To enter, enter your E-mail</p>
-                                    <input className='profile__input' type="email" placeholder='Email'/>
-                                </>
-                            }
-                            
-                            <input className='profile__input' type="password" placeholder='Password'/>
-                            <button className='profile__submit-btn' type='submit'>Login</button>
-
-                            <span className='profile__method-selector' onClick={() => toggleLoginMethod(!LoginMethod.method)}>
-                                {LoginMethod.method
-                                    ? <p>Login with E-mail</p>
-                                    : <p>Login with Phonenumber</p>
-                                }
-                            </span>
-                        </ProfileForm>
+                        <LoginForm closePopup={closePopup} />
                     :
-                        <ProfileForm closePopup={closePopup}>
-                            <input className='profile__input' type="text" placeholder='Name'/>
-                            <input className='profile__input' type="phone" placeholder='Phone'/>
-                            <input className='profile__input' type="email" placeholder='Email'/>
-                            <input className='profile__input' type="password" placeholder='Password'/>
-                            <input className='profile__input' type="password" placeholder='Confirm password'/>
-                            <button className='profile__submit-btn' type='submit'>Registration</button>
-                        </ProfileForm>
+                        <RegistrationForm closePopup={closePopup} />
                 }
 
-                <span className='profile__type-selector' onClick={() => toggleLoginType(!LoginType.type)}>
-                    {LoginType.type
+                <span className='profile__type-selector' onClick={() => toggleProfileForm(!ProfileForm)}>
+                    {ProfileForm
                         ? <p>Registration</p>
                         : <p>Login</p>
                     }

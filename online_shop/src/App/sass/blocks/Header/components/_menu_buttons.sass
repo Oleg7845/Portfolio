@@ -2,6 +2,7 @@
 
 @mixin Menu_buttons()
     .menu-buttons
+        position: relative
         display: flex
 
         .menu-buttons__btn
@@ -24,6 +25,18 @@
                 background: Modules.$colors-color__main-white
                 color: Modules.$colors-color__main-red
 
+        .profile__menu
+            position: absolute
+            top: 50px
+            @include Modules.mixins-display__flex-column()
+            width: 180px
+            height: 100px
+            padding: 20px
+            border-radius: 8px
+            background: Modules.$colors-color__nature-white
+            -webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.5)
+            box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.5)
+
         .modal-shadow
             position: fixed
             top: 0
@@ -38,7 +51,6 @@
 
             .modal-window
                 position: relative
-                visibility: visible
                 width: 340px
                 padding: 20px
                 border-radius: 8px
@@ -72,7 +84,6 @@
 
                     &::after
                         transform: translateX(-8px) rotate(-45deg)
-
 
                 .profile__title
                     margin-bottom: 20px
