@@ -1,4 +1,8 @@
-import { IPopupProps } from "./IPopup.interface";
+interface IPopupProps {
+    open: boolean,
+    closePopup: Function,
+    children: React.ReactNode
+}
 
 const Popup = ({open, closePopup, children}: IPopupProps) => {
 

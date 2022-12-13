@@ -4,7 +4,7 @@ import Smartphones_list from '../data/Smartphones_list';
 import TopBanner from './TopBanner/TopBanner';
 import Nav from './Menu/Nav';
 import Search from './Menu/Search';
-import Profile from './Menu/Profile';
+import Profile from './Menu/Profile/Profile';
 import Compare from './Menu/Compare';
 import Favorites from './Menu/Favorites';
 import Basket from './Menu/Basket';
