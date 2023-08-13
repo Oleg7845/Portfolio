@@ -1,3 +1,0 @@
-1. Create Shoping bascket with save products in localstore/cookies
-2. Create Favorite products with save products in personal cabinet
-3. Create Compare products
